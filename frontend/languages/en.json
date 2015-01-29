@@ -12,6 +12,7 @@
 	"ORGANISATIONUNIT_FIND":"Seleccione un municipio u barrio asociado al programa",
 	"ACCESS_TITLE":"Error de Acceso",
 	"ACCESS_DESC":"No tienes acceso a este modulo. Si requieres acceso por favor comunicate con el administrador del sistema",
-	"ACCESS_BUTTON":"Regresar"
+	"ACCESS_BUTTON":"Regresar",
+	"PROGRAM_LIST":"seleccione un programa"
 	
 }

@@ -17,7 +17,9 @@ Dhis2Api.factory("commonvariable", function () {
 			urlbase:"http://localhost:8080/dhis/",
 			OrganisationUnit:"",
 			Period:"",
-			DataSet:""
+			DataSet:"",
+			program:"",
+			stage:""
 			};
 
    return Vari; 
@@ -55,59 +57,36 @@ Dhis2Api.factory("OrganisationunitLevel",['$resource','commonvariable', function
   { get: { method: "GET"} });
 }]);
 
-Dhis2Api.factory("Analytics",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.url+"resourceTables/analytics", 
+Dhis2Api.factory("Programs",['$resource','commonvariable', function ($resource,commonvariable) {
+	return $resource( commonvariable.url+"programs", 
    {}, 
   { post: { method: "POST"} });
 }]);
 
-Dhis2Api.factory("DatasetDAppr",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.url+"dataSets", 
-   {filter:'approveData:eq:true', 
-   fields:'id,name,dataElements,periodType'},
+Dhis2Api.factory("ProgramsStages",['$resource','commonvariable', function ($resource,commonvariable) {
+	return $resource( commonvariable.url+"programs/:uid", 
+   {
+		uid:'@uid',
+		fields:'programStages,id,name,programTrackedEntityAttributes'
+   }, 
+  { post: { method: "POST"} });
+}]);
+
+Dhis2Api.factory("Stages",['$resource','commonvariable', function ($resource,commonvariable) {
+	return $resource( commonvariable.url+"programStages/:uid", 
+   {
+		uid:'@uid'
+   },
   { get: { method: "GET"} });
 }]);
 
-Dhis2Api.factory("DataApprovalsState",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.url+"dataApprovals", 
-	{ds:'@id',
-	pe:'@pe',
-	ou:'@ou'},
-  { get: { method: "GET"} });
+Dhis2Api.factory("ProgramsStageDataelement",['$resource','commonvariable', function ($resource,commonvariable) {
+	return $resource( commonvariable.url+"programStages/:uid", 
+   {
+		uid:'@uid',
+		fields:'programStageDataElements'
+   }, 
+  { post: { method: "POST"} });
 }]);
 
-Dhis2Api.factory("AnaliticsDAppr",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.url+"analytics.json?:dimension1&:dimension2&:dimension3", 
-	{dimension1:'@dx',
-	dimension2:'@pe',
-	dimension3:'@ou',
-	tableLayout:'true',
-	rows:'dx',
-	columns:'pe;ou'},
-  { get: { method: "GET"} });
-}]);
-
-Dhis2Api.factory("DataSetsUID",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.url+"dataSets.json?fields=id", 
-	{},
-  { get: { method: "GET"} });
-}]);
-
-Dhis2Api.factory("MetaDataExport",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.url+"metadata.json", 
-	{},
-  { get: { method: "GET"} });
-}]);
-
-Dhis2Api.factory("DataSetForm",['$resource','commonvariable', function ($resource,commonvariable) {
-	return $resource( commonvariable.urlbase+"dhis-web-reporting/generateDataSetReport.action", 
-	{ds:'@id',
-	 pe:'@pe',
-	 ou:'@ou'},
-  { get: { method: "GET", transformResponse: function (response) {
-      return {codeHtml: response};
-  		}
-      }
-	});
-}]);
 

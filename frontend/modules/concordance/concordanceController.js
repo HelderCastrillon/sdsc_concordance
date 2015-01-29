@@ -3,7 +3,7 @@ appConcordanceSDSC.filter('to_trusted', ['$sce', function($sce){
             return $sce.trustAsHtml(codeHtml);
         };
     }]);
-appConcordanceSDSC.controller('concordanceController', ["$scope",'$filter',"commonvariable","DataApprovalsState","DataSetForm", function($scope, $filter,commonvariable,DataApprovalsState,DataSetForm) {
+appConcordanceSDSC.controller('concordanceController', ["$scope",'$filter',"commonvariable","ProgramsStageDataelement", function($scope, $filter,commonvariable,ProgramsStageDataelement) {
 	var $translate = $filter('translate');
     $scope.Clearform=function(){
     	window.location.reload();  	

@@ -1,28 +1,25 @@
 <d2-authorization menuoption="F_APPROVE_DATA"></d2-authorization>
 <h2>{{'CONCORDANCE_TITLE' | translate}}</h2>
-<div class="panel panel-default col-md-6">
+<div class="panel panel-default col-md-11">
 
 <div class="row">
 	<div class="col-md-2 pull-right">
-	<button type="button" class="btn btn-default"ng-model="collapsed" ng-click="collapsed=!collapsed">
+	<button type="button" class="btn btn-default" ng-model="collapsed" ng-click="collapsed=!collapsed">
   <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 </button>
 	</div>
 </div>
 <div class="row" ng-hide="collapsed">
-	<div class="col-md-12">
-		<d2-dropdowndataset></d2-dropdowndataset> 
-		<d2-dropdownperiod></d2-dropdownperiod>
-		<div class="row">
-			<div class="col-md-12">
-				<d2-dropdownorganisationunit></d2-dropdownorganisationunit>
-			</div>
-		</div>
+	
+	<div class="row">
+			<div class="col-md-6"> <label>{{ 'PROGRAM1' | translate }}</label> <d2-dropdownprograms></d2-dropdownprograms> </div>
+			<div class="col-md-6"><label>{{ 'PROGRAM2' | translate }}</label> <d2-dropdownprograms></d2-dropdownprograms></div>
+	</div>
 		<br>
 		<div class="row">
 			<div class="col-md-12">
-				<button class="btn btn-primary" ng-click="GetValueOfDataSet()" type="submit">{{ 'DATA_APPROVAL_GET' | translate }}</button>
-				<button class="btn btn-default" ng-click="Clearform()" type="submit">{{ 'DATA_APPROVAL_CANCEL' | translate }}</button>
+				<button class="btn btn-primary" ng-click="GetValueOfDataSet()" type="submit">{{ 'CONCORDANCE_SAVE' | translate }}</button>
+				<button class="btn btn-default" ng-click="Clearform()" type="submit">{{ 'CONCORDANCE_CANCEL' | translate }}</button>
 			</div>
 		</div>
 		<br>
