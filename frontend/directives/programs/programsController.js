@@ -11,6 +11,7 @@ Dhis2Api.controller("d2DropdownprogramsController", ['$scope', 'Programs','Stage
 			$scope.ProgramName=prSelected.name;
 			$scope.SeeStage=true;
 			$scope.ListStage=ProgramsStages.get({uid:prSelected.id});
+			commonvariable.programStages=$scope.ListStage;
 		}
 		$scope.selectStage=function(stSelected){
 			$scope.StageName=stSelected.name;

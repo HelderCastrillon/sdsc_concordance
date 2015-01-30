@@ -19,6 +19,7 @@ Dhis2Api.factory("commonvariable", function () {
 			Period:"",
 			DataSet:"",
 			program:"",
+			programStages:"",
 			stage:""
 			};
 

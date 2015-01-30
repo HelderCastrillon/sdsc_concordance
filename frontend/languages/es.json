@@ -2,8 +2,9 @@
 	"TITLE_APPS": "Secretaría Departamental de Salud",
 	"CONCORDANCE_CREATE":"Crear rutina de concordancia",
 	"CONCORDANCE_RUN":"Administrar rutinas de concordancia",
-	"CONCORDANCE_TITLE":"Rutina de concordancia",
-	"CONCORDANCE_SAVE": "Guardar Regla",
+	"CONCORDANCE_TITLE":"Selección de programas a comparas",
+	"CONCORDANCE_RULE_TITLE":" Construcción de reglas",
+	"CONCORDANCE_SAVE": "Guardar rutina",
 	"CONCORDANCE_CANCEL": "Cancelar",
 	"PROGRAM1":"Programa 1",
 	"PROGRAM2":"Programa 2",
@@ -12,6 +13,11 @@
 	"ACCESS_TITLE":"Error de Acceso",
 	"ACCESS_DESC":"No tienes acceso a este modulo. Si requieres acceso por favor comunicate con el administrador del sistema",
 	"ACCESS_BUTTON":"Regresar",
-	"PROGRAM_LIST":"seleccione un programa"
-	
+	"PROGRAM_LIST":"seleccione un programa",
+	"STAGE_LIST":"Seleccione una etapa",
+	"ATTRIBUTE_LIST":"Seleccione un attributo",
+	"ATTRIBUTE1":"Attributos del programa1",
+	"ATTRIBUTE2":"Attributos del programa2",
+	"DATAELEMENT1":"Campos del programa1",
+	"DATAELEMENT2":"campos del programa2"
 }
