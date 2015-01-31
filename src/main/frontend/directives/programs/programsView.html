@@ -1,0 +1,36 @@
+<style>
+#dropdown-list{
+    max-height: 187px;
+    overflow: auto;
+    top: 1px;
+    position: relative;
+    left: 1px;
+    box-shadow:none;
+}
+</style>
+<div class="dropdown" ng-controller="d2DropdownprogramsController">
+ <div class="dropdown">
+	   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+	    {{ProgramName?ProgramName:'PROGRAM_LIST' | translate}}
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" id="dropdown-list" role="menu" aria-labelledby="dropdownCountry">
+		   <li ng-repeat="data in ListPrograms.programs">
+			   <a  ng-click='selectProgram(data)'>{{data.name}}</a>
+		   </li>
+	   </ul>
+	</div>
+	 
+	 <div class="dropdown" ng-show="SeeStage">
+	   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+	    {{StageName?StageName:'STAGE_LIST' | translate}}
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" id="dropdown-list" role="menu" aria-labelledby="dropdownCountry">
+		   <li ng-repeat="data in ListStage.programStages">
+			   <a  ng-click='selectStage(data)'>{{data.name}}</a>
+		   </li>
+	   </ul>
+	</div>
+</div>
+

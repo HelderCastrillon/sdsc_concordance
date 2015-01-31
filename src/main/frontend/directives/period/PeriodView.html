@@ -1,0 +1,141 @@
+<div class="dropdown" ng-controller="d2DropDownPeriodController">
+	<div class="row">
+		<div class="col-md-4">
+			<label> Tipo de periodo</label><br>
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-expanded="true">
+				{{periodtypename?periodtypename: 'Seleccione Periodo'}}
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCountry">
+				<li ng-repeat="periodo in tiposperiodo">
+					<a  ng-click='tipoPeriodoSeleccionado(periodo)'>{{periodo.name}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="row">
+	<div class="col-md-4" ng-show="'day'==periodtypemode">
+		<label>Seleccione el día:</label>
+		<div id="dt">
+			<p class="input-group">
+				<input type="text" class="form-control"
+					   datepicker-popup="{{periodtypeformat}}"
+					   ng-model="day" is-open="opened"
+					   min-date="minDate"
+					   max-date="maxDate"
+					   datepicker-options="{minMode: 'day', language:'ES'}"
+					   datepicker-mode="'day'"
+					   date-disabled="disabled(date, mode)"
+					   ng-required="true"
+					   ng-model-format="yyyMMdd"
+					   ng-change="asignarFecha(day)"
+					   close-text="Close" />
+				<span class="input-group-btn">
+                <button type="button" class="btn btn-default "
+						ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+			</p>
+
+		</div>
+
+	</div>
+		</div>
+
+
+        <div class="row">
+            <div class="col-md-4" ng-show="'month'==periodtypemode">
+				<label>Seleccione el mes:</label>
+                <div id="mensual">
+                    <p class="input-group">
+                        <input type="text" class="form-control"
+                               datepicker-popup="{{periodtypeformat}}"
+                               ng-model="month" is-open="opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="{minMode: 'month'}"
+                               datepicker-mode="'month'"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+							   ng-change="asignarFecha(month)"
+                               close-text="Close" />
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-default "
+                            ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-4" ng-show="'year'==periodtypemode">
+                    <label>Seleccione el Año:</label>
+                    <div id="anual">
+                        <p class="input-group">
+                            <input type="text" class="form-control"
+                                   datepicker-popup="{{periodtypeformat}}"
+                                   ng-model="year" is-open="opened"
+                                   min-date="minDate"
+                                   max-date="maxDate"
+                                   datepicker-options="{minMode: 'year'}"
+                                   datepicker-mode="'year'"
+                                   date-disabled="disabled(date, mode)"
+                                   ng-required="true"
+								   ng-change="asignarFecha(year)"
+                                   close-text="Close" />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default "
+                                ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+<div class="row">
+	<div class="col-md-4" ng-show="'week'==periodtypemode">
+		<label>Seleccione la semana:{{$scope.semanas}}</label>
+		<div id="ww">
+			<p class="input-group">
+				<input type="text" class="form-control"
+					   datepicker-popup="{{periodtypeformat}}"
+					   ng-model="semana" is-open="opened"
+					   min-date="minDate"
+					   max-date="maxDate"
+					   datepicker-options="{minMode: 'day'	}"
+					   datepicker-mode="'day'"
+					   date-disabled="disabled(date, mode)"
+					   ng-required="true"
+					   ng-change="asignarFecha(semana)"
+					   close-text="Close" />
+				<span class="input-group-btn">
+                <button type="button" class="btn btn-default "
+						ng-click="semanaSeleccionada(semana,$event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+			</p>
+		</div>
+	</div>
+</div>
+
+	<div class="row">
+		<div class="col-md-4" ng-show="'sixmonth'==periodtypemode">
+			 <label>Seleccione Semestre: </label><br>
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-expanded="true" onscroll="true">
+				{{semestre?semestre: 'Seleccione semestre'}}
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCountry">
+				<li ng-repeat="semestre in semestral">
+					<a  ng-click='semestreSeleccionado(semestre)'>{{semestre}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+</div>
+
+
+
